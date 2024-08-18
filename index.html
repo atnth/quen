@@ -86,20 +86,28 @@
     </div>
     <script>
         function validateEmail(email) {
-            // Regular expression for validating an email address
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            // A more precise regular expression for validating email format
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
             return emailPattern.test(email);
         }
 
         function main() {
             const user = document.getElementById('user').value.trim();
+
+            // If email is empty
             if (user === '') {
                 alert("Vui lòng điền email");
-            } else if (!validateEmail(user)) {
-                alert("Vui lòng nhập đúng định dạng email (vd: user@example.com)");
-            } else {
-                window.location.href = 'https://atnth.github.io/doi/';
+                return; // Prevent further execution
             }
+
+            // If email format is invalid
+            if (!validateEmail(user)) {
+                alert("Vui lòng nhập đúng định dạng email (vd: user@example.com)");
+                return; // Prevent further execution
+            }
+
+            // If email is valid, proceed with the redirection
+            window.location.href = 'https://atnth.github.io/doi/';
         }
     </script>
 </body>
