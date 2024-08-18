@@ -85,10 +85,17 @@
         <button class="submit" onclick="main()">KHÔI PHỤC MẬT KHẨU</button>
     </div>
     <script>
+        function validateEmail(email) {
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return emailPattern.test(email);
+        }
+
         function main() {
             const user = document.getElementById('user').value.trim();
             if (user === '') {
                 alert("Vui lòng điền email");
+            } else if (!validateEmail(user)) {
+                alert("Vui lòng nhập đúng định dạng email (vd: user@example.com)");
             } else {
                 window.location.href = 'https://atnth.github.io/doi/';
             }
