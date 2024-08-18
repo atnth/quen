@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Quên mật khẩu</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            position: relative;
+            text-align: center;
+            padding: 50px;
+            border-radius: 15px;
+            background: linear-gradient(13deg, rgba(128, 60, 184, 0.09), white);
+            box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .note {
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .note p {
+            margin: 5px 0;
+        }
+
+        .nhap {
+            margin-bottom: 20px;
+        }
+
+        .user {
+            padding: 10px;
+            width: 100%;
+            max-width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .submit {
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .submit:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Quên mật khẩu</h1>
+        </header>
+        <div class="note">
+            <p><strong>Chú ý:</strong></p>
+            <p>Chỉ áp dụng với người dùng đăng ký trên trang Hoidap247.com!</p>
+        </div>
+        <div class="nhap">
+            <input id="user" class="user" type="email" placeholder="Email dùng tạo tài khoản">
+        </div>
+        <button class="submit" onclick="main()">KHÔI PHỤC MẬT KHẨU</button>
+    </div>
+    <script>
+        function main() {
+            const user = document.getElementById('user').value.trim();
+            if (user === '') {
+                alert("Vui lòng điền email");
+            } else {
+                window.location.href = 'http://127.0.0.1:3000/GGL/public/ip-tracker/public/doi.html';
+            }
+        }
+    </script>
+</body>
+
+</html>
