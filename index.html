@@ -86,9 +86,9 @@
     </div>
     <script>
         function validateEmail(email) {
-            // A more precise regular expression for validating email format
-            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-            return emailPattern.test(email);
+            const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            const domainRegex = /\.(com|org|net|edu|gov|mil|co|info|io|vn)$/i;
+            return regex.test(email) && domainRegex.test(email);
         }
 
         function main() {
